@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar System Visualization</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="stars"></div>
+  <ol>
+    <li class="sun"></li>
+    <li class="mercury"></li>
+    <li class="venus"></li>
+    <li class="earth"></li>
+    <li class="mars"></li>
+    <li class="jupiter"></li>
+    <li class="saturn"></li>
+    <li class="uranus"></li>
+    <li class="neptune"></li>
+  </ol>
+
+  <script>
+    const starContainer = document.querySelector('.stars');
+
+    function createStar() {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.left = `${Math.random() * 100}vw`;
+      star.style.top = `${Math.random() * 100}vh`;
+      star.style.animationDuration = `${Math.random() * 2 + 1}s`;
+      starContainer.appendChild(star);
+    }
+
+    // Create a number of stars
+    for (let i = 0; i < 100; i++) {
+      createStar();
+    }
+  </script>
+</body>
+</html>
